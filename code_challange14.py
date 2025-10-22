@@ -21,7 +21,7 @@ while isODD == True:
         continue
     elif num == 0:
         print("Loop Terminated")
-        isODD = False # Terminate the loop
+        break
     else:
         if num % 2 == 0:
             print("EVEN number detected, moving on kahit di maka move-on :/")
@@ -33,7 +33,7 @@ print(f"{name}, The sum of all the ODD is {total_sum}")
 print(f"all of the ODD is {odd}")
 
 
-#past lessons
+#past lessons for reference
 
 # odd_sum = 0
 
@@ -44,3 +44,4 @@ print(f"all of the ODD is {odd}")
 #         odd_sum += num
 
 # print(f"The Sum of All ODD numbers is --> {odd_sum}")
+
