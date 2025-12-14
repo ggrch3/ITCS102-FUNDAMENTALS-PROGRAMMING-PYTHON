@@ -38,6 +38,7 @@ def pause_and_return():
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
+
 # special effects, because I'm just that type of dud
 
 
@@ -136,7 +137,7 @@ def topic_variables():
             demo_data_type()
             pause_and_return()
         elif user_choice == '0':
-            type_print("\nReturning to Main Menu")
+            type_print("\nReturning to Topic Variables")
             
             break
         else:
@@ -158,30 +159,30 @@ def display_op_submenu():
     print("- - - - - - - - - - - - - - - - - - - - - - - - - -")
 
 
-def topic_operators():
-        while True:
-            clear_screen()
-        def op_submenu():
-            while True:
-                display_op_submenu()
-                user_choice = input("Enter your option (0-3): ").upper()
-                
-                if user_choice == '1':
-                    demo_basic_arithmetic() 
-                elif user_choice == '2':
-                    demo_assignment_operators() 
-                elif user_choice == '3':
-                    demo_atm_denomination() 
-                elif user_choice == '0':
-                    type_print("\nReturning to Main Menu")
-                    time.sleep(1)
-                    break
-                else:
-                    type_print("'{user_choice}' is invalid. Please enter a number 0-3.")
-                    time.sleep(1.5)
-                if user_choice in ('1', '2','3'):
-                    input("\nPress ENTER to go back to the oonditionals menu...")
 
+def op_submenu():
+    while True:
+        display_op_submenu()
+        user_choice = input("Enter your option (0-3): ").upper()
+
+        if user_choice == '1':
+            demo_basic_arithmetic()
+        elif user_choice == '2':
+            demo_assignment_operators()
+        elif user_choice == '3':
+            demo_atm_denomination()
+        elif user_choice == '0':
+            type_print("\nReturning to Main Menu")
+            time.sleep(1)
+            break
+        else:
+            type_print("'{user_choice}' is invalid. Please enter a number 0-3.")
+            time.sleep(1.5)
+        if user_choice in ('1', '2','3'):
+            input("\nPress ENTER to go back to the oonditionals menu...")
+
+def topic_operators():
+    op_submenu()
 
 # Topic no. 4 Conditionals
 def display_cond_submenu():
@@ -226,7 +227,7 @@ def cond_submenu():
             input("\nPress ENTER to return to the Conditionals menu...")
 
 def topic_conditionals():
-    cond_submenu
+    cond_submenu()
 
 
 
@@ -473,69 +474,69 @@ def user_defined_prog():
         print("================================================")
 
 
-user_choice = input("Enter option (0-7): ")
+    user_choice = input("Enter option (0-7): ")
 
-if user_choice == '1':
-    msg = input("Enter a message: ")
-    print_statements.custom_print_demo(msg)
-
-
-elif user_choice == '2':
-    val = input("Enter something (number, word, True/False): ")
+    if user_choice == '1':
+        msg = input("Enter a message: ")
+        print_statements.custom_print_demo(msg)
 
 
-    if val.isdigit():
-        variables_topic.get_variable_type(int(val))
-    elif val.lower() == "true" or val.lower() == "false":
-        variables_topic.get_variable_type(val.lower() == "true")
+    elif user_choice == '2':
+        val = input("Enter something (number, word, True/False): ")
+
+
+        if val.isdigit():
+            variables_topic.get_variable_type(int(val))
+        elif val.lower() == "true" or val.lower() == "false":
+            variables_topic.get_variable_type(val.lower() == "true")
+        else:
+            variables_topic.get_variable_type(val)
+
+
+    elif user_choice == '3':
+        n1 = input("Enter first number: ")
+        n2 = input("Enter second number: ")
+        op = input("Enter operator (+, -, *, /): ")
+
+        result = operators_topic.calculate_arithmetic(float(n1), float(n2), op)
+        print("Result: ", result)
+
+
+    elif user_choice == '4':
+        num = int(input("Enter a whole number: "))
+
+        result = conditionals_topic.check_even_odd(num)
+        print("Result: ", result)
+
+
+    elif user_choice == '5':
+        numb = int(input("Enter number to count up to (1-5): "))
+        loops_topic.run_simple_loop(numb)
+
+
+    elif user_choice == '6':
+        fruits = ['apple', 'banana', 'orange', 'grape']
+        print("Current list: ", fruits)
+
+        item = input("Enter item to search: ")
+        found = lists_topic.check_item_in_list(item, fruits)
+        print("Found?", found)
+
+
+    elif user_choice == '7':
+        name = input("Enter your name: ")
+        print(functions_topic.generate_greeting(name))
+
+
+    elif user_choice == '0':
+        print("Rreturning to Main Menu...")
+        time.sleep(1)
+
+
     else:
-        variables_topic.get_variable_type(val)
+        print("Invalid option.")
 
-
-elif user_choice == '3':
-    n1 = input("Enter first number: ")
-    n2 = input("Enter second number: ")
-    op = input("Enter operator (+, -, *, /): ")
-
-    result = operators_topic.calculate_arithmetic(float(n1), float(n2), op)
-    print("Result: ", result)
-
-
-elif user_choice == '4':
-    num = int(input("Enter a whole number: "))
-
-    result = conditionals_topic.check_even_odd(num)
-    print("Result: ", result)
-
-
-elif user_choice == '5':
-    numb = int(input("Enter number to count up to (1-5): "))
-    loops_topic.run_simple_loop(numb)
-
-
-elif user_choice == '6':
-    fruits = ['apple', 'banana', 'orange', 'grape']
-    print("Current list: ", fruits)
-
-    item = input("Enter item to search: ")
-    found = lists_topic.check_item_in_list(item, fruits)
-    print("Found?", found)
-
-
-elif user_choice == '7':
-    name = input("Enter your name: ")
-    print(functions_topic.generate_greeting(name))
-
-
-elif user_choice == '0':
-    print("Rreturning to Main Menu...")
-    time.sleep(1)
-    break
-
-else:
-    print("Invalid option.")
-
-input("\nPress ENTER to continue...")
+    input("\nPress ENTER to continue...")
 
 
 
@@ -557,6 +558,7 @@ def main_menu():
     print("8. User-Defined Program")
     print("- - - - - - - - - - - - - - - - - - - - - - - - - -")
     print("9. End Program")
+# This is the menu, where all the topics that had been discussed are here, andn when clicking specific number will take the user to a submenu of said topics
 
 def main_selection():
     while True:
@@ -581,9 +583,9 @@ def main_selection():
         elif user_choice == '8':
             user_defined_prog() 
         elif user_choice == '9':
-            type_print("================================================", delay=0)
+            type_print("================================================")
             type_print("\tThank you for using the menu program!!", delay=0)
-            type_print("================================================", delay=0)
+            type_print("================================================")
             break
         else:
             type_print("Error: '{user_choice}' is invalid, Please enter a number from the the menu.")
