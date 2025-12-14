@@ -2,7 +2,7 @@
 
 # 1. Content from activity6.py (Basic Arithmetic Operator)
 def demo_basic_arithmetic():
-    print("--- Operator Demo 1: Basic Arithmetic ---")
+    print("Operator Demo 1: Basic Arithmetic")
     x = eval(input("Input number here -> "))
     print(f"69 * {x}")
     y = 69 * x
@@ -107,4 +107,5 @@ def calculate_arithmetic(num1, num2, op):
             return "Error: Cannot divide by zero."
         return num1 / num2
     else:
+
         return "Error: Invalid operator."
