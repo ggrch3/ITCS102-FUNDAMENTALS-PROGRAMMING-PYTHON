@@ -17,7 +17,7 @@ def demo_escape_characters():
     print("\tjamal\t")
 
 # triangle code challenge
-def demo_print_art():
+def demo_print_triangle():
     name = input("What is your name? ")
     print("\t\t\t\t*\n\n\n"
         "\t\t\t*\t\t*\n\n\n"
@@ -29,21 +29,21 @@ def demo_print_art():
         "\t\t\t*\t\t*\n\n\n"
         "\t\t\t\t*".format(name))
 
-# --- OPTIONAL: Run all demos for the main menu Topic 1 selection ---
+# OPTIONAL: Run all demos for the main menu Topic 1 selection
 def run_topic_1_all():
     """Runs all print demonstrations sequentially for the main menu selection."""
     print("\n" + "="*50)
     print("TOPIC 1: PRINT STATEMENTS DEMONSTRATION")
     print("="*50)
     
-    print("\n--- 1. Basic Hello World (activity1.py) ---")
+    print("\n1. Basic Hello World (activity1.py)")
     demo_basic_print()
     
-    print("\n--- 2. Escape Character & Formatting (activity3.py) ---")
+    print("\n2. Escape Character & Formatting (activity3.py)")
     demo_escape_characters()
     
-    print("\n--- 3. Complex Print Art & Color (code_challange.py) ---")
-    demo_print_art()
+    print("\n3. Complex Print Art & Color (code_challange.py)")
+    demo_print_triangle()()
     print("\n" + "="*50)
 
 
